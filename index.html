@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio Website</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/ea2ea53b11.js" crossorigin="anonymous"></script>
+</head>    
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="images/logo.png" alt="Logo" class="logo">
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fas fa-times" onclick="closemenu()"></i>
+                </ul>
+                <i class="fas fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <p>Entrepreneur</p>
+                <h1>Hi, I'm <span>Victor</span>
+            </div>
+        </div>
+    </div>
+    <script>
+        function openmenu() {
+            document.getElementById('sidemenu').style.right = "0";
+        }
+
+        function closemenu() {
+            document.getElementById('sidemenu').style.right = "-200px";
+        }
+
+        function opentab(tabname) {
+            var tablinks = document.getElementsByClassName("tab-links");
+            var tabcontents = document.getElementsByClassName("tab-contents");
+            for (var i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active-link");
+                tabcontents[i].classList.remove("active-tab");
+            }
+            document.getElementById(tabname).classList.add("active-tab");
+            event.target.classList.add("active-link");
+        }
+    </script>
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="images/user.png">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="subtitle">About Me</h1>
+                    <p>I am Victor Perez and I am a current student at the University of Southern California.
+                        I am studying Economics with Business Finance and have two specialties in Applied Analytics and AI Applications. 
+                        My goal is to combine creative thinking and analytics to solve problems at the intersection of business and technology. 
+                        I consistently push the boundaries of what's possible. 
+                        I thrive in high-pressure environments, lead by example, and can be counted on consistently to deliver above expectations.  
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>Financial Analysis and Strategy</span><br>Financial Modeling and Portfolio Optimization</li>
+                            <li><span>Data Analytics and Insight</span><br>Data management and Machine Learning</li>
+                            <li><span>Web/App Development</span><br>Building Android/iOS apps</li>                        
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>2024 - Current</span><br>CEO at HouseFax</li>
+                            <li><span>2023</span><br>Investment Analyst at BellWether Asset Management</li>
+                            <li><span>2022</span><br>Data Analyst at RK Mission Critical </li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li>
+                                <span class="highlighted-year">2021 - 2025</span><br>
+                                <span class="highlighted-text">ECONOMICS</span> at Dana and David Dornsife College of Letter, Arts, and Sciences
+                            </li>
+                            <li>
+                                <span class="highlighted-year">2021 - 2025</span><br>
+                                <span class="highlighted-text">BUSINESS FINANCE</span> at Marshall School of Business
+                            </li>
+                            <li>
+                                <span class="highlighted-year">2021 - 2025</span><br>
+                                <span class="highlighted-text">APPLIED ANALYTICS AND AI APPLICATIONS</span> at Viterbi School of Engineering
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="services">
+        <div class="container">
+            <h1 class="sub-title">My Services</h1>
+            <div class="services-list">
+                <div class="service">
+                    <i class="fa-solid fa-code"></i>
+                    <h2>Financial Analysis and Consulting</h2>
+                    <p>Welcome to our website! We're dedicated to providing top-quality products and exceptional customer service. 
+                        Explore our wide range of offerings and discover the perfect solutions tailored to your needs. 
+                        Stay tuned for the latest updates and special offers!
+                    </p>
+                </div>
+                <div class="service">
+                    <i class="fa-solid fa-crop"></i>
+                    <h2>Business Strategy and Planning</h2>
+                    <p>Welcome to our website! We're dedicated to providing top-quality products and exceptional customer service. 
+                        Explore our wide range of offerings and discover the perfect solutions tailored to your needs. 
+                        Stay tuned for the latest updates and special offers!
+                    </p>
+                </div>
+                <div class="service">
+                    <i class="fa-brands fa-app-store"></i>
+                    <h2>Technology Solutions and Integration</h2>
+                    <p>Welcome to our website! We're dedicated to providing top-quality products and exceptional customer service. 
+                        Explore our wide range of offerings and discover the perfect solutions tailored to your needs. 
+                        Stay tuned for the latest updates and special offers!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="portfolio">
+        <div class="container">
+            <h1 class="sub-title">My Projects</h1>
+            <div class="work-list">
+                <div class="work">
+                    <img src="images/work-1.png" alt="Social Media App">
+                    <div class="layer">
+                        <h3>Social Media App</h3>
+                        <p>The app connects you to the talented people around the world. Download it from the play store.</p>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="images/work-2.png" alt="Music App">
+                    <div class="layer">
+                        <h3>Music App</h3>
+                        <p>The app connects you to the talented people around the world. Download it from the play store.</p>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="images/work-3.png" alt="Online Shopping App">
+                    <div class="layer">
+                        <h3>Online Shopping App</h3>
+                        <p>The app connects you to the talented people around the world. Download it from the play store.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p><i class="fa-solid fa-paper-plane"></i>victor.perez2867@gmail.com</p>
+                    <p><i class="fa-solid fa-square-phone"></i>720-556-8106</p>
+                    <div class="social-icons">
+                        <a href="https://facebook.com/"><i class="fa-brands fa-facebook"></i></a>
+                        <a href=""><i class="fa-brands fa-instagram"></i></a>
+                        <a href=""><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                    <a href="images/my-cv.pdf" download class="btn btn2">Download CV</a>
+                </div>
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="Name" placeholder="Your Name">
+                        <input type="email" name="Email" placeholder="Your Email">
+                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                        <button type="submit" class="btn btn2">Submit</button>
+                    </form>
+                    <span id="msg"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>Copyright <i class="fa-regular fa-copyright"></i>Victor Perez. All Rights Reserved.</p>
+    </div>
+
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbx8qHCDyW8L6QJRn-RX40SKOKKcpICDbTLc35otAyw5wZuJmY98h2jhEBY8BCpdAEDb/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById("msg")
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                msg.innerHTML = "Message sent successfully"
+                setTimeout(function(){
+                    msg.innerHTML = ""
+                },1000)
+                form.reset
+            })
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+</body>
+</html>
+
