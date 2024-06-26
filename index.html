@@ -1,213 +1,339 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Portfolio Website</title>
+    <title>Victor's Personal Portfolio Website</title>
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/ea2ea53b11.js" crossorigin="anonymous"></script>
-</head>    
+    <style>
+        /* Add this to your existing style.css or within a style tag */
+        #form-status {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 1.2em;
+            display: none; /* Hide initially */
+            width: 100%; /* Ensure it spans the container width */
+        }
+
+        .contact .input-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center align the items */
+        }
+    </style>
+</head>
+
 <body>
-    <div id="header">
-        <div class="container">
-            <nav>
-                <img src="images/logo.png" alt="Logo" class="logo">
-                <ul id="sidemenu">
-                    <li><a href="#header">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <i class="fas fa-times" onclick="closemenu()"></i>
-                </ul>
-                <i class="fas fa-bars" onclick="openmenu()"></i>
-            </nav>
-            <div class="header-text">
-                <p>Entrepreneur</p>
-                <h1>Hi, I'm <span>Victor</span>
+    <!-- Header Section -->
+    <header class="header">
+        <a href="#" class="logo">Portfolio</a>
+        <i class='bx bx-menu' id="menu-icon"></i>
+        <nav class="navbar">
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#work">Services</a>
+            <a href="#projects">Portfolio</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section class="home" id="home">
+        <div class="home-content">
+            <h3>Hello, It's Me</h3>
+            <h1>Victor Perez</h1>
+            <h3>And I'm a <span class="multiple-text"></span></h3>
+            <p>Welcome to my personal website!</p>
+            <div class="social-media">
+                <a href="https://www.linkedin.com/in/victor-j-perez-92a442205" target="_blank"><i class='bx bxl-linkedin-square'></i></a>
+                <a href="mailto:victor.perez2867@gmail.com"><i class='bx bxl-gmail'></i></a>
             </div>
+            <a href="images/my-cv.pdf" download class="btn btn2">Download CV</a>
         </div>
-    </div>
-    <script>
-        function openmenu() {
-            document.getElementById('sidemenu').style.right = "0";
-        }
 
-        function closemenu() {
-            document.getElementById('sidemenu').style.right = "-200px";
-        }
+        <div class="home-img">
+            <img src="images/user.png" alt="Home Image">
+        </div>
+    </section>
 
-        function opentab(tabname) {
-            var tablinks = document.getElementsByClassName("tab-links");
-            var tabcontents = document.getElementsByClassName("tab-contents");
-            for (var i = 0; i < tablinks.length; i++) {
-                tablinks[i].classList.remove("active-link");
-                tabcontents[i].classList.remove("active-tab");
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="about-img">
+            <img src="images/background.png" alt="About Image">
+        </div>
+
+        <div class="about-content">
+            <h2 class="heading">About <span>Me</span></h2>
+            <h3>Hi, I'm Victor</h3>
+            <p>I am an entrepreneur by day and consultant/developer by night. My goal is to combine creative thinking and design with an analytical
+                approach to solve problems at the intersection of business and technology. I work great in teams, lead by example and can be counted
+                 on to consistently deliver and beyond expectations. 
+            </p>
+            <div class="more-content">
+                <p>My skills are widespread. Spanning across multiple creative and technical disciplines. I absorb information like a sponge and am in a 
+                    constant chase for learning and pursuing skills that can help develop me into a well-rounded professional. 
+                </p>
+            </div>
+            <a href="#" class="btn read-more-btn">My Skills</a>
+        </div>
+    </section>
+
+    <!-- services section design  -->
+    <section class="services" id="services">
+        <style>
+            .more-content {
+                display: none;
+                margin-top: 10px;
             }
-            document.getElementById(tabname).classList.add("active-tab");
-            event.target.classList.add("active-link");
-        }
-    </script>
-    <div id="about">
-        <div class="container">
-            <div class="row">
-                <div class="about-col-1">
-                    <img src="images/user.png">
+            
+            .btn {
+                display: inline-block;
+                margin-top: 10px;
+                padding: 10px 20px;
+                background-color: #FF3C00;      
+                color: #fff;
+                text-decoration: none;
+                border-radius: 5px;
+                transition: background-color 0.3s;
+            }
+            
+            .btn:hover {
+                background-color: #FF3C00;
+            }
+        </style>
+    </head>
+    <body>
+        <section class="services" id="services">
+            <h2 class="heading">My <span>Services</span></h2>
+    
+            <div class="services-container">
+                <div class="services-box">
+                    <i class='bx bx-code-alt'></i>
+                    <h3>Data Analysis and Machine Learning Solutions</h3>
+                    <p>Enhance decision-making accuracy and operational efficiency through predictive models and data insights.</p>
+                    <div class="more-content">
+                        <p>At RK Mission Critical, I developed a machine learning model that accurately predicted market trends.
+                             I accomplished this by gathering and preprocessing large datasets, selecting relevant features, and training
+                             the model using advanced algorithms like random forests and gradient boosting.<br><br>
+
+                             At Erewhon, I conducted logit regression on demographic data to identify the optimal store location. 
+                             This involved sourcing data from various public and private databases, cleaning and merging the data, 
+                             and performing statistical analysis to identify key factors influencing store success.</p>
+                    </div>
+                    <a href="#" class="btn read-more-btn">Read More</a>
                 </div>
-                <div class="about-col-2">
-                    <h1 class="subtitle">About Me</h1>
-                    <p>I am Victor Perez and I am a current student at the University of Southern California.
-                        I am studying Economics with Business Finance and have two specialties in Applied Analytics and AI Applications. 
-                        My goal is to combine creative thinking and analytics to solve problems at the intersection of business and technology. 
-                        I consistently push the boundaries of what's possible. 
-                        I thrive in high-pressure environments, lead by example, and can be counted on consistently to deliver above expectations.  
-                    <div class="tab-titles">
-                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
-                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
-                        <p class="tab-links" onclick="opentab('education')">Education</p>
+    
+                <div class="services-box">
+                    <i class='bx bxs-paint'></i>
+                    <h3>Financial and Investment Analysis</h3>
+                    <p>Optimize investment portfolios and improve financial outcomes with expert analysis and tailored recommendations.</p>
+                    <div class="more-content">
+                        <p>During my internship at Project Destined x Bellwether Asset Management, I conducted a financial analysis of Lincoln Village. 
+                            I examined rental income, operating expenses, and market trends to identify a 15% rent boost potential, creating a detailed financial model 
+                            and performing sensitivity analysis to project a $4M property value increase over three years. <br><br>
+
+                            In the JPMorgan Asset Management virtual experience, I constructed tailored investment portfolios by collecting clients' investment objectives, 
+                            risk tolerance, and financial goals. I performed quantitative fundamental analysis on selected stocks, using financial ratios and performance metrics 
+                            to recommend suitable investments.
+                        
+                        </p>
                     </div>
-                    <div class="tab-contents active-tab" id="skills">
-                        <ul>
-                            <li><span>Financial Analysis and Strategy</span><br>Financial Modeling and Portfolio Optimization</li>
-                            <li><span>Data Analytics and Insight</span><br>Data management and Machine Learning</li>
-                            <li><span>Web/App Development</span><br>Building Android/iOS apps</li>                        
-                        </ul>
+                    <a href="#" class="btn read-more-btn">Read More</a>
+                </div>
+    
+                <div class="services-box">
+                    <i class='bx bx-bar-chart-alt'></i>
+                    <h3>Strategic Business Consulting and Development</h3>
+                    <p>Drive business growth and market penetration with innovative solutions and strategic planning.</p>
+                    <div class="more-content">
+                        <p>As the founder of Prop Check, I developed a platform to streamline property data analysis. I designed the system architecture,
+                             integrated various data sources (e.g., zoning regulations, tax records), and created algorithms to automate the analysis process, 
+                             reducing approval times and operational expenses for clients in the mortgage and banking sectors. <br><br>
+
+                             At Erewhon, I presented strategic recommendations to the CEO by integrating data from diverse sources such as market research reports, 
+                             competitor analysis, and consumer surveys. My analysis helped pinpoint optimal locations for new stores, enhancing market penetration 
+                             and projected revenue growth. <p>
                     </div>
-                    <div class="tab-contents" id="experience">
-                        <ul>
-                            <li><span>2024 - Current</span><br>CEO at HouseFax</li>
-                            <li><span>2023</span><br>Investment Analyst at BellWether Asset Management</li>
-                            <li><span>2022</span><br>Data Analyst at RK Mission Critical </li>
-                        </ul>
-                    </div>
-                    <div class="tab-contents" id="education">
-                        <ul>
-                            <li>
-                                <span class="highlighted-year">2021 - 2025</span><br>
-                                <span class="highlighted-text">ECONOMICS</span> at Dana and David Dornsife College of Letter, Arts, and Sciences
-                            </li>
-                            <li>
-                                <span class="highlighted-year">2021 - 2025</span><br>
-                                <span class="highlighted-text">BUSINESS FINANCE</span> at Marshall School of Business
-                            </li>
-                            <li>
-                                <span class="highlighted-year">2021 - 2025</span><br>
-                                <span class="highlighted-text">APPLIED ANALYTICS AND AI APPLICATIONS</span> at Viterbi School of Engineering
-                            </li>
-                        </ul>
-                    </div>
+                    <a href="#" class="btn read-more-btn">Read More</a>
                 </div>
             </div>
-        </div>
-    </div>
-    <div id="services">
-        <div class="container">
-            <h1 class="sub-title">My Services</h1>
-            <div class="services-list">
-                <div class="service">
-                    <i class="fa-solid fa-code"></i>
-                    <h2>Financial Analysis and Consulting</h2>
-                    <p>Welcome to our website! We're dedicated to providing top-quality products and exceptional customer service. 
-                        Explore our wide range of offerings and discover the perfect solutions tailored to your needs. 
-                        Stay tuned for the latest updates and special offers!
+        </section>
+    
+        <script>
+            document.querySelectorAll(".read-more-btn").forEach(button => {
+                button.addEventListener("click", function(event) {
+                    event.preventDefault();
+                    const moreContent = this.previousElementSibling;
+                    if (moreContent.style.display === "none" || moreContent.style.display === "") {
+                        moreContent.style.display = "block";
+                        this.textContent = "Read Less";
+                    } else {
+                        moreContent.style.display = "none";
+                        this.textContent = "Read More";
+                    }
+                });
+            });
+        </script>
+    </section>
+
+    <!-- portfolio section design  -->
+    <section class="portfolio" id="portfolio">
+        <h2 class="heading">Latest <span>Projects</span></h2>
+        <div class="portfolio-container">
+            <div class="portfolio-box">
+                <img src="images/work-1.jpg" alt="">
+                <div class="portfolio-layer">
+                    <h4>Personality Prediction System</h4>
+                    <p>I developed a Python project predicting Myers-Briggs personality types using machine learning.
+                         I used libraries like NumPy, Pandas, and Scikit-learn for data analysis and model evaluation,
+                          applying the model to Kaggle user comments for insights.<br><br>
+
+                        Skills: Python, NumPy, Pandas, Scikit-learn, Matplotlib, Seaborn, Beautiful Soup
                     </p>
+                    <a href="#"><i class='bx bx-link-external'></i></a>
                 </div>
-                <div class="service">
-                    <i class="fa-solid fa-crop"></i>
-                    <h2>Business Strategy and Planning</h2>
-                    <p>Welcome to our website! We're dedicated to providing top-quality products and exceptional customer service. 
-                        Explore our wide range of offerings and discover the perfect solutions tailored to your needs. 
-                        Stay tuned for the latest updates and special offers!
+            </div>
+    
+            <div class="portfolio-box">
+                <img src="images/work-2.jpg" alt="">
+                <div class="portfolio-layer">
+                    <h4>Predict the Stock Market with Machine Learning</h4>
+                    <p>I developed a Python project to predict S&P 500 prices using the yfinance package for data, 
+                        cleaned it for visualization, set up machine learning models, used Random Forest for prediction,
+                         and evaluated results through backtesting and model refinement.<br><br>
+
+                        Skills: Python, Pandas, Matplotlib, Scikit-learn, Random Forest Classifiers.
                     </p>
+                    <a href="#"><i class='bx bx-link-external'></i></a>
                 </div>
-                <div class="service">
-                    <i class="fa-brands fa-app-store"></i>
-                    <h2>Technology Solutions and Integration</h2>
-                    <p>Welcome to our website! We're dedicated to providing top-quality products and exceptional customer service. 
-                        Explore our wide range of offerings and discover the perfect solutions tailored to your needs. 
-                        Stay tuned for the latest updates and special offers!
+            </div>
+    
+            <div class="portfolio-box">
+                <img src="images/work-3.jpg" alt="">
+                <div class="portfolio-layer">
+                    <h4>Chat GPT Clone with React.js</h4>
+                    <p>I created a React.js charge dipty clone without mandatory sign-in,
+                         focusing on learning and user engagement. I set up the React environment, 
+                         designed a sidebar and main layout, styled elements, and integrated the OpenAI API <br><br>
+
+                        Skills: React.js, useEffect, useRef, useState, CSS, Flexbox
                     </p>
+                    <a href="#"><i class='bx bx-link-external'></i></a>
                 </div>
+            </div>
+    
+            <div class="portfolio-box">
+                <img src="images/work-4.jpg" alt="">
+                <div class="portfolio-layer">
+                    <h4>Bend Business Plan and Mockup</h4>
+                    <p>Developed a business plan for a stretching app, incorporating the "Summer Ready: June Challenge" 
+                        to enhance user engagement. Proposed targeted stretches to help users achieve specific fitness goals, 
+                        making the app dynamic, interactive, and focused on long-term mobility and wellness. <br><br>
+
+                        Skill: Business Strategy, UI/UX, Marketing, Ilustrator, Photoshop.
+                    </p>
+                    <a href="#"><i class='bx bx-link-external'></i></a>
+                </div>
+            </div>
+
+            <div class="portfolio-box">
+                <img src="images/work-5.jpg" alt="">
+                <div class="portfolio-layer">
+                    <h4>Amazon Sales Price Scraper</h4>
+                    <p> I developed a Web Scraping Build and Deploy eCommerce Price Tracker using Next.js 14. 
+                        The project includes automated data scraping, cron jobs, email notifications, deployment,
+                         and more, all managed by a bot instead of human intervention. <br><br>
+
+                        Skills: Java, Next.js, Node.js, GraphQL APIs, Cron Jobs, Python 
+                    </p>
+                    <a href="#"><i class='bx bx-link-external'></i></a>
+                </div>
+            </div>
+
+            <div class="portfolio-box">
+                <img src="images/work-6.jpg" alt="">
+                <div class="portfolio-layer">
+                    <h4>Full Stack E-commerce Website</h4>
+                    <p>Developed a full-stack eCommerce website using MERN stack. Created a front-end for product display, cart, and user authentication. 
+                         Built a back-end with APIs for product management, cart updates, and login. <br><br>
+
+                        Skills: React.js, Express.js, Node.js, MongoDB, API creation
+                    </p>
+                    <a href="#"><i class='bx bx-link-external'></i></a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    
+
+<!-- contact section --------  -->
+<section class="contact" id="contact">
+    <h2 class="heading">Contact <span>Me!</span></h2>
+    <div class="container">
+        <div class="row">
+            <div class="input-box">
+                <form name="submit-to-google-sheet" action="/submit-form" method="POST">
+                    <input type="text" name="Name" placeholder="Full Name" required>
+                    <input type="email" name="Email" placeholder="Email Address" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message" required></textarea>
+                    <button type="submit" class="btn btn2">Send Message</button>
+                </form>
+                <span id="form-status"></span>
             </div>
         </div>
     </div>
-    <div id="portfolio">
-        <div class="container">
-            <h1 class="sub-title">My Projects</h1>
-            <div class="work-list">
-                <div class="work">
-                    <img src="images/work-1.png" alt="Social Media App">
-                    <div class="layer">
-                        <h3>Social Media App</h3>
-                        <p>The app connects you to the talented people around the world. Download it from the play store.</p>
-                    </div>
-                </div>
-                <div class="work">
-                    <img src="images/work-2.png" alt="Music App">
-                    <div class="layer">
-                        <h3>Music App</h3>
-                        <p>The app connects you to the talented people around the world. Download it from the play store.</p>
-                    </div>
-                </div>
-                <div class="work">
-                    <img src="images/work-3.png" alt="Online Shopping App">
-                    <div class="layer">
-                        <h3>Online Shopping App</h3>
-                        <p>The app connects you to the talented people around the world. Download it from the play store.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="contact">
-        <div class="container">
-            <div class="row">
-                <div class="contact-left">
-                    <h1 class="sub-title">Contact Me</h1>
-                    <p><i class="fa-solid fa-paper-plane"></i>victor.perez2867@gmail.com</p>
-                    <p><i class="fa-solid fa-square-phone"></i>720-556-8106</p>
-                    <div class="social-icons">
-                        <a href="https://facebook.com/"><i class="fa-brands fa-facebook"></i></a>
-                        <a href=""><i class="fa-brands fa-instagram"></i></a>
-                        <a href=""><i class="fa-brands fa-linkedin"></i></a>
-                    </div>
-                    <a href="images/my-cv.pdf" download class="btn btn2">Download CV</a>
-                </div>
-                <div class="contact-right">
-                    <form name="submit-to-google-sheet">
-                        <input type="text" name="Name" placeholder="Your Name">
-                        <input type="email" name="Email" placeholder="Your Email">
-                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
-                        <button type="submit" class="btn btn2">Submit</button>
-                    </form>
-                    <span id="msg"></span>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="copyright">
-        <p>Copyright <i class="fa-regular fa-copyright"></i>Victor Perez. All Rights Reserved.</p>
+</section>
+
+<!-- footer design  -->
+
+<footer class="footer">
+    <div class="footer-text">
+        <p>Copyright &copy; 2024 by Victor | All Rights Reserved.</p>
     </div>
 
-    <script>
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbx8qHCDyW8L6QJRn-RX40SKOKKcpICDbTLc35otAyw5wZuJmY98h2jhEBY8BCpdAEDb/exec'
-        const form = document.forms['submit-to-google-sheet']
-        const msg = document.getElementById("msg")
-      
-        form.addEventListener('submit', e => {
-          e.preventDefault()
-          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+    <div class="footer-iconTop">
+        <a href="#home"><i class='bx bx-up-arrow-alt'></i></a>
+    </div>
+</footer>
+
+<!-- scroll reveal -->
+
+<script src="https://unpkg.com/scrollreveal"></script>
+
+<!-- typed js -->
+<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+<script src="script.js"></script>
+
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbypauQr7-S6zwinO5T2YJHoPHGY_CxoLL7SEVYAhdrDmo9fo8AEn0M2fMP1pHWmUxLaeQ/exec';
+    const form = document.forms['submit-to-google-sheet'];
+    const formStatus = document.getElementById('form-status');
+
+    form.addEventListener('submit', e => {
+        e.preventDefault();
+        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
             .then(response => {
-                msg.innerHTML = "Message sent successfully"
-                setTimeout(function(){
-                    msg.innerHTML = ""
-                },1000)
-                form.reset
+                formStatus.innerHTML = 'SUCCESS! Your message has been sent.';
+                formStatus.style.color = 'green';
+                formStatus.style.display = 'block';
+                form.reset();
+                console.log('Success!', response);
             })
-            .catch(error => console.error('Error!', error.message))
-        })
-      </script>
+            .catch(error => {
+                formStatus.innerHTML = 'Error! Your message could not be sent.';
+                formStatus.style.color = 'red';
+                formStatus.style.display = 'block';
+                console.error('Error!', error.message);
+            });
+    });
+</script>
 </body>
+
 </html>
 
