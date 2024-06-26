@@ -243,6 +243,7 @@ span {
     margin: 1rem 0 3rem;
 }
 
+/* Base styles for the portfolio section */
 .portfolio {
     background: var(--second-bg-color);
     padding: 4rem 0;
@@ -270,6 +271,7 @@ span {
     display: flex; /* Added */
     justify-content: center; /* Center items horizontally */
     align-items: center; /* Center items vertically */
+    cursor: pointer; /* Add cursor pointer to indicate interactivity */
 }
 
 .portfolio-box img {
@@ -301,6 +303,7 @@ span {
     text-align: center;
 }
 
+.portfolio-box.show .portfolio-layer,
 .portfolio-box:hover .portfolio-layer {
     opacity: 1;
 }
@@ -333,18 +336,53 @@ span {
     font-size: 2.5rem; /* Icon size */
 }
 
+/* Media queries for responsiveness */
 @media (max-width: 1024px) {
     .portfolio-container {
         grid-template-columns: repeat(2, 1fr); /* 2 columns for medium screens */
+        padding: 0 2rem; /* Adjust padding for smaller screens */
+    }
+    .portfolio-layer h4,
+    .portfolio-layer p {
+        font-size: 1.5rem; /* Smaller font size for medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .portfolio-container {
+        grid-template-columns: 1fr; /* 1 column for smaller screens */
+        padding: 0 1rem; /* Adjust padding for smaller screens */
+    }
+    .portfolio-layer h4,
+    .portfolio-layer p {
+        font-size: 1.2rem; /* Smaller font size for smaller screens */
+    }
+    .portfolio-layer a {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+    .portfolio-layer a i {
+        font-size: 2rem; /* Adjust icon size */
     }
 }
 
 @media (max-width: 480px) {
     .portfolio-container {
-        grid-template-columns: repeat(4, 1fr); /* 4 columns for smaller screens */
+        grid-template-columns: 1fr; /* 1 column for extra small screens */
+        padding: 0 0.5rem; /* Adjust padding for extra small screens */
+    }
+    .portfolio-layer h4,
+    .portfolio-layer p {
+        font-size: 1rem; /* Smaller font size for extra small screens */
+    }
+    .portfolio-layer a {
+        width: 2rem;
+        height: 2rem;
+    }
+    .portfolio-layer a i {
+        font-size: 1.5rem; /* Adjust icon size */
     }
 }
-
 
 .contact h2 {
     margin-bottom: 3rem;
