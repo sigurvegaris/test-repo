@@ -49,17 +49,26 @@ ScrollReveal({
 });
 
 ScrollReveal().reveal('.home-content, .heading', { origin: 'top' });
-ScrollReveal().reveal('.home-img, .services-container, .portfolio-box, .contact form', { origin: 
-'bottom' });
+ScrollReveal().reveal('.home-img, .services-container, .portfolio-box, .contact form', { origin: 'bottom' });
 ScrollReveal().reveal('.home-content h1, .about-img', { origin: 'left' });
 ScrollReveal().reveal('.home-content p, .about-content', { origin: 'right' });
 
 // typed js
-
 const typed = new Typed('.multiple-text', {
-    strings:['Student!', 'Entrepreneur!', 'Innovator!', 'Friend!'],
+    strings: ['Student!', 'Entrepreneur!', 'Innovator!', 'Friend!'],
     typeSpeed: 100, 
     backSpeed: 100,
     backDelay: 1000,
     loop: true,
-})
+});
+
+// Toggle portfolio-layer on tap
+document.addEventListener('DOMContentLoaded', () => {
+    const portfolioBoxes = document.querySelectorAll('.portfolio-box');
+
+    portfolioBoxes.forEach(box => {
+        box.addEventListener('click', () => {
+            box.classList.toggle('show');
+        });
+    });
+});
